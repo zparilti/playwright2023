@@ -1,4 +1,4 @@
-// FOLLOW https://playwright.dev/docs/pom for iskelet
+// FOLLOW https://playwright.dev/docs/pom for samples
 // see both POM and PO 
 // model and object relations in practice
 //write locators
