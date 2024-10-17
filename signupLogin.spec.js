@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { PlaywrightDevPage } = require('./Pages/signupLogin');
+const { PlaywrightDevPage } = require('./signupLogin');
 
 test('home page should be visible', async({ page }) => {
 	const playwrightDev = new PlaywrightDevPage(page); // #1. Launch browser
