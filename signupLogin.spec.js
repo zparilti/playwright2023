@@ -3,6 +3,7 @@ const { PlaywrightDevPage } = require('./Pages/signupLogin');
 
 test('home page should be visible', async({ page }) => {
 	const playwrightDev = new PlaywrightDevPage(page); // #1. Launch browser
+		
 	await playwrightDev.goto(); // #2 Navigate to url
 	await page.waitForTimeout(10); // PAUSE
 	
@@ -28,14 +29,13 @@ test('home page should be visible', async({ page }) => {
 	
 	// 9. Fill details: Title, Name, Email, Password, Date of birth	
 	//await page.getByLabel('Mr').check();
-	await page.check('xpath=//*[@id="id_gender1"]');
-	await page.waitForTimeout(1000); // PAUSE
-	
-	await page.check('xpath=//*[@id="id_gender2"]"]');
+	await page.check('xpath=//*[@id="id_gender2"]"]'); // GIVES ERROR
 	await page.waitForTimeout(1000); // PAUSE
 
-
+	await page.check('xpath=//*[@id="id_gender1"]'); // WORKS IF COMES FIRST
+	await page.waitForTimeout(1000); // PAUSE
 	
+	// XPATH NOT GOOD FOR PLAYWRIGHT
 	//await page.getByPlaceholder('xpath=//*[@id="form"]/div/div/div[3]/div/form/input[3]').fill('e@g.com');
 	//await page.getByPlaceholder('xpath=//Email Address'[1][0]).fill('ne55weradw');
 	//await page.getByPlaceholder('xpath=//placeholder=Email Address'[1]).fill('ne55weradw');
